@@ -7,23 +7,18 @@
 
 int main() {
 
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-
     //Cidade 01;
     int Populacao1, Turistico1;
     float Area_cidade1, PIB1;
+    double Densidade_Populacional1;
+    double PIB_percapita1;
     char Cidade1[20], Codigo1[3] = "A01";
 
     //Cidade 2
     int Populacao2, Turistico2;
     float Area_cidade2, PIB2;
+    double Densidade_Populacional2;
+    double PIB_percapita2;
     char Cidade2[20], Codigo2[3] = "A02";
 
     //Interface ao usuário
@@ -66,6 +61,13 @@ int main() {
     printf("Digite o número de pontos turístico da cidade: ");
     scanf("%d", &Turistico2);
 
+    //área de cálculo
+    Densidade_Populacional1 = Populacao1 / Area_cidade1;
+    Densidade_Populacional2 = Populacao2 / Area_cidade2;
+
+    PIB_percapita1 = PIB1 / Populacao1;
+    PIB_percapita2 = PIB2 / Populacao2;
+
     //Mostrando  valores atribuido ao usuário
     //Cidade 1
     printf("\nCARTA CADASTRADA\n");
@@ -75,6 +77,8 @@ int main() {
     printf("Área da cidade(km²): %f \n",Area_cidade1);
     printf("Produto Interno Bruto(PIB):%f \n", PIB1);
     printf("Pontos turístico da cidade:%d \n", Turistico1);
+    printf("Densidade populacional:%f \n", Densidade_Populacional1);
+    printf("PIB Per Capita:%f \n", PIB_percapita1);
 
     //Cidade 2
     printf("\nCARTA CADASTRADA\n");
@@ -84,6 +88,8 @@ int main() {
     printf("Área da cidade(km²): %f \n",Area_cidade2);
     printf("Produto Interno Bruto(PIB):%f \n", PIB2);
     printf("Pontos turístico da cidade:%d \n", Turistico2);
+    printf("Densidade populacional:%f \n", Densidade_Populacional2);
+    printf("PIB Per Capita:%f \n", PIB_percapita2);
 
     return 0;
 }
